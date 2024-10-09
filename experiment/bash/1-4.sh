@@ -326,9 +326,8 @@ void serial_int_handler(void *opaque)
     int c = cons_getc();
 #if defined(LAB1_EX3) && defined(_SHOW_SERIAL_INPUT)
     // LAB1 EXERCISE3: YOUR CODE
-        kprintf("got input ");
-        kprintf((char)c);
-        kprintf('\n');
+        kprintf("got input %c \n", c);
+	
 #endif
 #ifdef LAB4_EX2
     extern void dev_stdin_write(char c);
@@ -424,6 +423,7 @@ cons_getc(void) {
 }
 EOF
 
- cd /home/CQUCS/ucore-loongarch32-cqu2022_noanswer 
+cd /home/CQUCS/ucore-loongarch32-cqu2022_noanswer 
 make clean
 make qemu
+
